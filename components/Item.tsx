@@ -1,5 +1,6 @@
 import changeItemStatus from '@app/api/items/changeItemStatus';
 import { svgCheckIcon } from '@styles/svg';
+import Link from 'next/link';
 import React from 'react';
 
 type ItemProps = {
@@ -15,7 +16,9 @@ export default function Item({
   isCompleted,
   refetchItems,
 }: ItemProps) {
-  const handleChangeItemStatus = async () => {
+  const handleChangeItemStatus = async (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
     try {
       await changeItemStatus(id, { isCompleted: !isCompleted });
       refetchItems();
@@ -25,7 +28,8 @@ export default function Item({
   };
 
   return (
-    <div
+    <Link
+      href={`/items/${id}`}
       className={`mt-4 flex h-[50px] w-full items-center rounded-[27px] border-2 border-slate-900 ${isCompleted ? 'bg-violet-100' : 'bg-white'}`}
     >
       <button
@@ -39,6 +43,6 @@ export default function Item({
       >
         {name}
       </div>
-    </div>
+    </Link>
   );
 }

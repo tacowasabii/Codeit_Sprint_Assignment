@@ -49,7 +49,7 @@ export default function InputBar({ refetchItems }: InputBarProp) {
       <div className="relative h-14 cursor-pointer mobile:w-14 tablet:w-[162px] desktop:w-[168px]">
         <button
           type="submit"
-          className={`group relative z-10 flex h-[52px] items-center justify-center rounded-3xl border-2 border-slate-900 ${inputValue.trim().length > 0 ? 'bg-violet-600' : 'bg-slate-100'} mobile:w-[55px] tablet:w-[158.5px] desktop:w-[164px]`}
+          className={`relative z-10 flex h-[52px] items-center justify-center rounded-3xl border-2 border-slate-900 ${inputValue.trim().length > 0 ? 'bg-violet-600' : 'bg-slate-100'} mobile:w-[55px] tablet:w-[158.5px] desktop:w-[164px]`}
           disabled={inputValue.trim().length === 0}
         >
           {svgPlusIcon}

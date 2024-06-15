@@ -34,6 +34,7 @@ const config: Config = {
         '300': '#CBD5E1',
         '200': '#E2E8F0',
         '100': '#F1F5F9',
+        '50': '#F8FAFC',
       },
       violet: {
         '600': '#7C3AED',

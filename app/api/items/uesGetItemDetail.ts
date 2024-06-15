@@ -1,18 +1,18 @@
 import instance from '@api/_axios/instance';
 import { useQuery } from '@tanstack/react-query';
 
-const getItems = async () => {
+const getItemDetail = async (id: number) => {
   const { data } = await instance({
     method: 'GET',
-    url: 'items',
+    url: `items/${id}`,
   });
   return data;
 };
 
-export const useGetItems = () => {
+export const useGetItemDetail = (id: number) => {
   const { data, isLoading, refetch } = useQuery({
-    queryKey: ['Items'],
-    queryFn: getItems,
+    queryKey: ['ItemDetail', id],
+    queryFn: () => getItemDetail(id),
   });
 
   return { data, isLoading, refetch };
