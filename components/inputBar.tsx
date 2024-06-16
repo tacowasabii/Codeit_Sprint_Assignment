@@ -3,6 +3,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { svgPlusIcon } from '@styles/svg';
 import addItem from '@app/api/items/addItems';
+import { useState } from 'react';
 
 type InputBarProp = {
   refetchItems: () => void;
@@ -12,23 +13,28 @@ export default function InputBar({ refetchItems }: InputBarProp) {
   const { register, watch, handleSubmit, setValue } = useForm<{
     inputField: string;
   }>();
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const inputValue = watch('inputField', '');
 
   const handleAddItem = async (name: string) => {
     if (name.trim()) {
+      setIsSubmitting(true);
       try {
         await addItem({ name: name.trim() });
         setValue('inputField', '');
         refetchItems();
       } catch (error) {
         console.error('Error adding item:', error);
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
 
   const onSubmit: SubmitHandler<{ inputField: string }> = async (data) => {
-    await handleAddItem(data.inputField);
+    if (!isSubmitting) {
+      await handleAddItem(data.inputField);
+    }
   };
 
   return (
