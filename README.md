@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Do It**
 
-## Getting Started
+Do It은 할 일 목록을 관리하는 To Do 서비스입니다. 이 프로젝트는 Next.js와 TypeScript를 사용하여 구축되었으며, 사용자에게 간단하고 직관적인 인터페이스를 제공합니다.
 
-First, run the development server:
+## **기능 소개**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### **할 일 목록 페이지**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**목록 조회**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **로고 버튼**: 클릭 시 메인 페이지로 이동합니다.
+- **할 일 분류**: 진행 중인 할 일과 완료된 할 일을 나누어 볼 수 있습니다.
+- **무한스크롤**: 할 일 목록은 무한스크롤로 이어집니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**할 일 추가**
 
-## Learn More
+- **입력창**: 상단 입력창에 할 일 텍스트를 입력하고 `추가하기` 버튼을 클릭하거나 엔터를 치면 할 일을 새로 생성합니다.
 
-To learn more about Next.js, take a look at the following resources:
+**완료**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **완료 상태 변경**: 할 일 항목의 왼쪽 버튼을 클릭하면 체크 표시가 되면서 완료 상태가 됩니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### **할 일 상세 페이지**
 
-## Deploy on Vercel
+할 일 항목을 누르면 상세 페이지로 넘어갑니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**할 일 수정**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **항목 이름 수정**: 항목 이름을 수정할 수 있습니다.
+- **메모 추가**: 메모를 추가할 수 있습니다.
+- **이미지 첨부**: 이미지(최대 1개)를 첨부할 수 있습니다.
+- **수정 완료**: `수정 완료` 버튼을 클릭하면 수정 사항이 반영되고, 할 일 목록 페이지로 이동합니다.
+
+**할 일 삭제**
+
+- **삭제**: `삭제하기` 버튼을 클릭하면 할 일 삭제가 가능하며, 삭제 후 할 일 목록 페이지로 이동합니다.
+
+## **설치 및 사용 방법**
+
+1. **레포지토리 클론**
+
+   ```bash
+   git clone https://github.com/tacowasabii/do-it.git
+   cd do-it
+   ```
+
+2. **패키지 설치**
+
+   ```bash
+   npm install
+   ```
+
+3. **개발 서버 시작**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **브라우저에서 열기**
+   ```bash
+   http://localhost:3000
+   ```
