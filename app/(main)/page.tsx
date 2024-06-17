@@ -42,7 +42,7 @@ export default function Home() {
               </ul>
             )}
           </div>
-          <div className="w-full mobile:mt-12 tablet:mt-12">
+          <div className="w-full mobile:my-12 tablet:my-12">
             <Image alt="done" src="/done.png" width={101} height={36} />
             {isLoading || completedItems.length == 0 ? (
               <DoneEmpty />

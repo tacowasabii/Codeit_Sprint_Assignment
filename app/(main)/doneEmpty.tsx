@@ -3,9 +3,8 @@ import Image from 'next/image';
 export default function DoneEmpty() {
   return (
     <div className="flex w-full flex-col items-center">
-      <div className="mt-16 flex h-[240px] items-center">
+      <div className="mt-16 flex h-[240px] items-center mobile:hidden">
         <Image
-          className="mobile:hidden"
           alt="done_empty"
           src="/done_empty.png"
           width={240}
