@@ -14,6 +14,8 @@ import {
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import MemoInput from './memoInput';
+import ImageUploader from './ImageUploader';
 
 export default function ItemDetailPage({ params }: { params: { id: number } }) {
   const router = useRouter();
@@ -108,48 +110,8 @@ export default function ItemDetailPage({ params }: { params: { id: number } }) {
         />
       </div>
       <div className="mt-6 flex w-full mobile:flex-col tablet:flex-col">
-        <div className="relative mr-6 flex h-[311px] w-full items-center justify-center overflow-hidden rounded-3xl border-2 border-dashed border-slate-300 bg-slate-50 desktop:w-[384px]">
-          {imageUrl ? (
-            <Image alt="uploaded-img" fill={true} src={imageUrl} />
-          ) : (
-            <Image alt="img" src="/imgPlaceholder.png" width={54} height={54} />
-          )}
-          {imageUrl ? (
-            <label className="absolute bottom-4 right-4 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border-2 border-slate-900 bg-slate-900/50">
-              {svgEditIcon2}
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleFileChange}
-              />
-            </label>
-          ) : (
-            <label className="absolute bottom-4 right-4 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-slate-200">
-              {svgAddIcon}
-              <input
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleFileChange}
-              />
-            </label>
-          )}
-        </div>
-        <div
-          className="flex h-[311px] w-full flex-col items-center rounded-3xl px-4 py-6 mobile:mt-[15px] tablet:mt-6 desktop:w-[588px]"
-          style={{ backgroundImage: 'url(/memo.png)' }}
-        >
-          <div className="font-extrabold text-amber-800">Memo</div>
-          <textarea
-            className="mt-4 flex h-full w-full text-center text-slate-800 outline-none"
-            style={{
-              backgroundImage: 'url(/memo.png)',
-            }}
-            value={memo}
-            onChange={(e) => setMemo(e.target.value)}
-          />
-        </div>
+        <ImageUploader imageUrl={imageUrl} onFileChange={handleFileChange} />
+        <MemoInput memo={memo} onMemoChange={(e) => setMemo(e.target.value)} />
       </div>
       <div className="mt-6 flex w-full justify-center desktop:justify-end">
         <div className="relative mr-4 h-14 w-[168px] mobile:mr-[7px]">
