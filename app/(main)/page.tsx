@@ -20,7 +20,7 @@ export default function Home() {
   const uncompletedItems = itemsData?.filter((item: Item) => !item.isCompleted);
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center py-6">
       <div className="flex flex-col items-center mobile:w-[343px] tablet:w-[696px] desktop:w-[1200px]">
         <InputBar refetchItems={refetch} />
         <div className="flex w-full mobile:mt-6 mobile:flex-col tablet:mt-10 tablet:flex-col desktop:mt-10 desktop:gap-6">
