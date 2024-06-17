@@ -1,5 +1,6 @@
 import instance from '@api/_axios/instance';
 
+// 이미지 업로드 함수
 const uploadImage = async (image: File) => {
   const formData = new FormData();
   formData.append('image', image);

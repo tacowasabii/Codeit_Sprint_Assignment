@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Header() {
+// 헤더 컴포넌트
+const Header = () => {
   return (
     <div className="flex h-[60px] items-center justify-center border-b-[1px] border-b-slate-200 bg-white">
       <div className="mobile:hidden tablet:w-[696px] desktop:w-[1200px]">
@@ -21,4 +22,6 @@ export default function Header() {
       </div>
     </div>
   );
-}
+};
+
+export default Header;

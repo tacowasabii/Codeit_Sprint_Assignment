@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-export default function DoneEmpty() {
+// 한 일 목록이 비어있을 때 보여지는 컴포넌트
+const DoneEmpty = () => {
   return (
     <div className="flex w-full flex-col items-center">
       <div className="mt-16 flex h-[240px] items-center mobile:hidden">
@@ -25,4 +26,6 @@ export default function DoneEmpty() {
       </div>
     </div>
   );
-}
+};
+
+export default DoneEmpty;

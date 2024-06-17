@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-export default function TodoEmpty() {
+// 할 일 목록이 비어있을 때 보여지는 컴포넌트
+const TodoEmpty = () => {
   return (
     <div className="flex w-full flex-col items-center">
       <Image
@@ -24,4 +25,6 @@ export default function TodoEmpty() {
       </div>
     </div>
   );
-}
+};
+
+export default TodoEmpty;
